@@ -10,14 +10,22 @@ public class Main {
         Main thing = new Main();
         
         int number = thing.getInputNumber();
-        
-        int sum = thing.sumOfNumbers(number);
 
+        long start1 = System.currentTimeMillis();
+        int sum = thing.sumOfNumbers(number);
+        long end1 = System.currentTimeMillis();
+        System.out.println("Elapsed Time = " + (end1 - start1) + "ms");
+
+        long start2 = System.currentTimeMillis();
         int gauss = thing.gaussianSumOfNumbers(number);
+        long end2 = System.currentTimeMillis();
+        System.out.println("Elapsed Time = " + (end2 - start2) + "ms");
         
         System.out.println(sum);
         System.out.println(gauss);
 
+        // The sumOfNumbers method is faster than the gaussianSumOfNumbers.
+        // Test Inputs used: 900000000, 800000000, 700000000.
     }
     
     // do this one and the lab is complete. really.
@@ -53,7 +61,6 @@ public class Main {
         }
         return sum;
     }
-
 
     // for Extra extra credit - compare the methods and show which one is faster
     // google "how to time some java code"
